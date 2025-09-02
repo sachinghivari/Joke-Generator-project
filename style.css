@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background: url(../laugh.jpg) no-repeat center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    width: 45%;
+    height: auto;
+    padding: 20px 20px;
+    background-color: ghostwhite;
+    text-align: center;
+    border-radius: 10px;
+    
+}
+
+.para{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    font-size: 16px;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: violet;
+    color: #fff;
+}
