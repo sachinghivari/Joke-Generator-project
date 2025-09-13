@@ -22,7 +22,7 @@ Built for fun and to practice **HTML, CSS, and JavaScript (with API fetching).**
 
 ## 📸 Screenshot
 
-![App Screenshot](./screenshot.png)
+![App Screenshot](./Screenshot.png)
 
 ## 💻 How to Run Locally
 
