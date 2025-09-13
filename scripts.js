@@ -1,26 +1,27 @@
  let para = document.querySelector('.para');
  let nextBtn = document.querySelector('.nxtBtn');
+   para = document.querySelector(".joke-card");
 
 
 
- let joke = [
-
-     `Why don’t skeletons ever fight each other? 
-     👉 Because they don’t have the guts.`,
-   `Why did the computer go to the doctor? 
-   👉 Because it caught a virus!`,
-   `Why did the math book look so sad? 
-   👉 Because it had too many problems.`,
-    `Parallel lines have so much in common...
-     👉 It’s a shame they’ll never meet.`,
-    `Why don’t eggs ever tell jokes? 
-    👉 They’d crack each other up.`
- ]
-
+   async function jokeG(params) {
       
+      try {
+        const res = await fetch("https://official-joke-api.appspot.com/jokes/random");
 
+      const data = await res.json();
 
-      nextBtn.addEventListener('click', function(){
-           let radomJoke = Math.floor(Math.random() * joke.length);
-           para.innerHTML = joke[radomJoke];
-      });
+      para.innerHTML = `${data.setup} 👉  ${data.punchline}`;
+     }catch(error){
+      para.innerHTML = para.innerHTML = `😅 Oops! Failed to load a joke. " Try Again "`;
+     }
+   }
+
+ document.addEventListener('keydown', function(e){
+      if(e.key === "Enter" || e.key === " "){
+        jokeG();
+      }
+ });
+
+ 
+nextBtn.addEventListener('click', jokeG);
