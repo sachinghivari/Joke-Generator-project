@@ -1,19 +1,26 @@
- let para = document.querySelector('.para');
+ let jokeText = document.querySelector('.joke-text');
  let nextBtn = document.querySelector('.nxtBtn');
-   para = document.querySelector(".joke-card");
+  let spinner = document.querySelector('.spinner');
+  
 
 
 
    async function jokeG(params) {
       
       try {
+        
+        spinner.style.display = "block";
+        jokeText.textContent ="";
+
         const res = await fetch("https://official-joke-api.appspot.com/jokes/random");
 
       const data = await res.json();
 
-      para.innerHTML = `${data.setup} 👉  ${data.punchline}`;
+      jokeText.innerHTML = `${data.setup} 👉  ${data.punchline}`;
      }catch(error){
-      para.innerHTML = para.innerHTML = `😅 Oops! Failed to load a joke. " Try Again "`;
+      jokeText.innerHTML = para.innerHTML = `😅 Oops! Failed to load a joke. " Try Again "`;
+     }finally {
+        spinner.style.display = "none";
      }
    }
 
